@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ProfileSekolah;
 use Illuminate\Http\Request;
 
+
 class ProfileSekolahController extends Controller
 {
     /**
