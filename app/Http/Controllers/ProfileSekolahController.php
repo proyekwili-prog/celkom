@@ -41,7 +41,7 @@ class ProfileSekolahController extends Controller
     /**
      * Update the specified resource in storage.
      */
-   public function update(Request $request)
+  public function update(Request $request)
 {
     $request->validate([
         'nama_sekolah'   => 'required|string|max:255',
@@ -51,9 +51,10 @@ class ProfileSekolahController extends Controller
         'tahun_berdiri'  => 'nullable|string|max:10',
         'kontak'         => 'nullable|string|max:100',
         'deskripsi'      => 'nullable|string',
+        'visi'           => 'nullable|string',
+        'misi'           => 'nullable|string', // Pastikan validasi misi ada
     ]);
 
-    // Mengambil data profil pertama, jika tidak ada buat baru
     $profile = ProfileSekolah::first();
 
     if (!$profile) {
@@ -67,6 +68,8 @@ class ProfileSekolahController extends Controller
     $profile->tahun_berdiri  = $request->tahun_berdiri;
     $profile->kontak         = $request->kontak;
     $profile->deskripsi      = $request->deskripsi;
+    $profile->visi           = $request->visi;
+    $profile->misi           = $request->misi; // <-- PASTIKAN BARIS INI ADA
 
     $profile->save();
 

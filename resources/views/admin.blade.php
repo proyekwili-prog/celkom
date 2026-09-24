@@ -53,12 +53,6 @@
                             <span>Profil Sekolah</span>
                         </a>
                     </li>
-                    {{-- <li class="sidebar-menu-item">
-                        <a href="index.html" class="sidebar-menu-link">
-                            <i class="bi bi-person-circle"></i>
-                            <span>Profil Sekolah</span>
-                        </a>
-                    </li> --}}
                     <li class="sidebar-menu-item">
                          <a href="{{ route('admin.guru') }}" class="sidebar-menu-link">
                             <i class="bi bi-person-workspace"></i>
@@ -108,36 +102,12 @@
                 <button class="sidebar-toggle-btn me-2" id="sidebar-toggle" aria-label="Toggle Navigation">
                     <i class="bi bi-list"></i>
                 </button>
-
-                <!-- Quick Actions Dropdown -->
-                <div class="dropdown ms-2">
-                    <button class="btn-quick-action dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false" id="quick-actions-dropdown">
-                        <i class="bi bi-plus-lg"></i>
-                        <span>Create</span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-quick-action" aria-labelledby="quick-actions-dropdown">
-                        <li class="dropdown-header">Quick Action Shortcuts</li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-plus"></i> New
-                                Invoice</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-person-plus"></i> New User</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-seam"></i> New Product</a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> System Settings</a>
-                        </li>
-                    </ul>
-                </div>
             </div>
-
-            <!-- Mid navbar: search pill -->
             <div class="navbar-search-wrapper">
-                <input type="text" class="navbar-search-input" placeholder="Search anything in Spark..."
-                    id="main-search">
-                <button class="navbar-search-btn" aria-label="Search">
-                    <i class="bi bi-search"></i>
+                     <input type="text" class="navbar-search-input" placeholder="Search anything in Spark..."
+                     id="main-search">
+                     <button class="navbar-search-btn" aria-label="Search">
+                     <i class="bi bi-search"></i>
                 </button>
             </div>
 
@@ -165,10 +135,7 @@
                                 <div class="notification-icon bg-success text-white">
                                     <i class="bi bi-wallet2"></i>
                                 </div>
-                                <div class="notification-content">
-                                    <p class="notification-text">New sale received: <strong>$150.00</strong></p>
-                                    <span class="notification-time">2 mins ago</span>
-                                </div>
+
                                 <span class="notification-unread-dot"></span>
                             </a>
                             <!-- User Registration Notification -->
@@ -197,23 +164,18 @@
                     </div>
                 </div>
 
-                <!-- Profile Dropdown -->
+
                 <div class="dropdown ms-2">
                     <button class="navbar-profile-btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false" id="profile-dropdown">
-                        <img src="assets/images/avatar.png" alt="Profile Image" class="navbar-profile-img">
+                             <img src="{{ asset('assets/images/sakola.png') }}"
+                             style="width: 50px; height: 50px; object-fit: contain; margin-bottom: 5px;">
                         <span class="navbar-profile-name d-none d-md-inline">Administrator</span>
                         <i class="bi bi-chevron-down navbar-profile-caret"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-profile"
                         aria-labelledby="profile-dropdown">
-                        <li class="dropdown-header">Welcome !</li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> My Account</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Settings</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-lock"></i> Lock Screen</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+
                         <li><a class="dropdown-item text-danger" href="page-login.html"><i
                                     class="bi bi-box-arrow-right"></i>
                                 Logout</a></li>
@@ -221,7 +183,7 @@
                 </div>
             </div>
         </header>
-        <!-- END: Top Navbar Component -->
+
 
         <div class="row g-4">
           @yield('content')
@@ -229,30 +191,8 @@
 
     </div>
     <!-- END: Main Layout Grid -->
-
-    <!-- START: Footer Component -->
-    <footer class="footer-custom">
-        <div class="footer-left">
-            <span class="footer-logo">
-                <i class="bi bi-asterisk"></i> Spark Admin
-            </span>
-            <span class="footer-separator">|</span>
-            <span class="footer-copy">&copy; 2026 Made with <i class="bi bi-heart-fill text-danger footer-heart"></i>
-                by<a href="https://sparkadminpro.gumroad.com/" target="_blank">Spark Admin</a>• Distributed by <a
-                    href="https://www.themewagon.com/" target="_blank">ThemeWagon</a> </span>
         </div>
-        <div class="footer-right">
-            <ul class="footer-links">
-                <li><a href="#" class="footer-link">Overview</a></li>
-                <li><a href="#" class="footer-link">Statistics</a></li>
-                <li><a href="#" class="footer-link">Help & Documentation</a></li>
-                <li><a href="#" class="footer-link">Status <span class="status-dot"></span></a></li>
-            </ul>
-        </div>
-    </footer>
-    <!-- END: Footer Component -->
 
-    </div>
     <!-- ==========================================
          END: Main Content Area
          ========================================== -->

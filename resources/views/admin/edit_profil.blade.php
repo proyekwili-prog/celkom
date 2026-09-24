@@ -50,6 +50,18 @@
                 <textarea name="deskripsi" style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px;" rows="4">{{ old('deskripsi', $profile->deskripsi ?? '') }}</textarea>
             </div>
 
+            <div style="margin-bottom: 15px;">
+                <label style="font-weight: 600; color: #333;">Visi</label>
+                <textarea name="visi" style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px;" rows="3" placeholder="Masukkan visi sekolah...">{{ old('visi', $profile->visi ?? '') }}</textarea>
+            </div>
+
+            <!-- Tambahan Misi -->
+            <!-- Bagian Misi di edit_profil.blade.php -->
+<div style="margin-bottom: 20px;">
+    <label style="font-weight: 600; color: #333;">Misi</label>
+    <textarea name="misi" style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px;" rows="5" placeholder="Masukkan misi sekolah...">{{ old('misi', $profile->misi ?? '') }}</textarea>
+</div>
+
             <button type="submit" style="background: #3f7657; color: white; border: none; padding: 10px 22px; border-radius: 7px; cursor: pointer; font-weight: 600;">Simpan</button>
             <a href="{{ route('admin.profile') }}" style="margin-left: 10px; text-decoration: none; color: #555;">Batal</a>
         </form>

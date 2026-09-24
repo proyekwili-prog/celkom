@@ -50,6 +50,8 @@ return new class extends Migration
             $table->text('visi_misi')->nullable();
             $table->string('tahun_berdiri')->nullable();
             $table->text('deskripsi')->nullable();
+            $table->text('visi')->nullable(); // <-- Tambahkan ini
+            $table->text('misi')->nullable();
             $table->timestamps();
         });
     }

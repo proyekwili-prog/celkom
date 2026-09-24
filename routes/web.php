@@ -10,8 +10,16 @@ use App\Http\Controllers\KelolaGaleriController;
 use App\Http\Controllers\KelolaGuruController;
 use App\Http\Controllers\KelolaEkstraKuliKulerController;
 
+
+
+
 Route::get(uri: '/', action:[DashboardController::class,'indexPublic'])->name('public.dashboard');
 Route::get(uri: '/login', action:[AuthController::class,'index'])->name('admin.login');
+
+
+
+
+
 
 Route::prefix('admin')->group(function () {
     Route::get(uri: '/dashboard', action:[DashboardController::class,'index'])->name('admin.dashboard');

@@ -22,5 +22,7 @@ class ProfileSekolah extends Model
         'visi_misi',
         'tahun_berdiri',
         'deskripsi',
+        'visi',
+        'misi',
     ];
 }

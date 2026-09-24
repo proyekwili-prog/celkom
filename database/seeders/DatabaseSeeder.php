@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
-    
+
 
         User::create([
-            
+
             'name' => 'Administrator',
             'email' => 'admin@sekolah.sch.id',
             'password' =>Hash::make('passsword'),
@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-        
+
             'name' => 'operator sekolah',
             'email' => 'operator@sekolah.sch.id',
             'password' =>Hash::make('passsword'),
