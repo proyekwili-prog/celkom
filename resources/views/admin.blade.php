@@ -11,7 +11,7 @@
     <meta name="author" content="Spark Admin Team">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{asset('assets/images/favicon.ico')}}">
+    {{--  <link rel="icon" type="image/png" href="{{asset('assets/images/sakola.png')}}">  --}}
 
     <!-- Local Third-Party Libraries (100% Offline Compatible) -->
     <link rel="stylesheet" href="{{asset('assets/libs/bootstrap/css/bootstrap.min.css')}}">
@@ -30,11 +30,10 @@
          Highly polished, dark-green sticky navigation
          ========================================== -->
     <div class="sidebar-wrapper" id="sidebar">
-        <!-- Brand Logo / Identity -->
-        <a href="{ route('admin.profil') }}" class="sidebar-brand">
-            <i class="bi bi-asterisk"></i>
-            <span>SMA CINTAWANA</span>
-        </a>
+      <a href="{{ route('admin.profile') }}" class="sidebar-brand" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="{{ asset('assets/images/sakola.png') }}" alt="Logo" style="width: 40px; height: 40px; object-fit: contain;">
+        <span>SMA CINTAWANA</span>
+    </a>
 
         <!-- Navigation Menu -->
         <div class="flex-grow-1 overflow-y-auto">
@@ -94,7 +93,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="main-wrapper">
 
         <!-- START: Top Navbar Component -->

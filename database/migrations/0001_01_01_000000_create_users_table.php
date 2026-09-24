@@ -36,6 +36,22 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        // TAMBAHAN: Skema Tabel Profile Sekolah
+        Schema::create('profile_sekolahs', function (Blueprint $table) {
+            $table->id('id_profil');
+            $table->string('nama_sekolah');
+            $table->string('kepala_sekolah')->nullable();
+            $table->string('foto')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('npsn');
+            $table->text('alamat');
+            $table->string('kontak')->nullable();
+            $table->text('visi_misi')->nullable();
+            $table->string('tahun_berdiri')->nullable();
+            $table->text('deskripsi')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -43,6 +59,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('profile_sekolahs');
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
