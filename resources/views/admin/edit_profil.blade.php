@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container" style="padding: 30px">
-    <h2 style="color: #18392b; margin-bottom: 5px;">Edit Profil Sekolah</h2>
+    <h2 style="color: black; margin-bottom: 5px;">Edit Profil Sekolah</h2>
     <p style="color: #777; margin-bottom: 25px;">Silakan ubah informasi sekolah di bawah ini.</p>
 
     <!-- max-width diubah menjadi 100% agar melebar full -->
@@ -62,7 +62,7 @@
     <textarea name="misi" style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px;" rows="5" placeholder="Masukkan misi sekolah...">{{ old('misi', $profile->misi ?? '') }}</textarea>
 </div>
 
-            <button type="submit" style="background: #3f7657; color: white; border: none; padding: 10px 22px; border-radius: 7px; cursor: pointer; font-weight: 600;">Simpan</button>
+            <button type="submit" style="background: #6c757d; color: white; border: none; padding: 10px 22px; border-radius: 7px; cursor: pointer; font-weight: 600;">Simpan</button>
             <a href="{{ route('admin.profile') }}" style="margin-left: 10px; text-decoration: none; color: #555;">Batal</a>
         </form>
     </div>

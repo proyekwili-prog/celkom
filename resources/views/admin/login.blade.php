@@ -9,9 +9,6 @@
     <meta name="description" content="Login Screen - Spark Admin Premium Bootstrap 5 Admin Dashboard Template">
     <meta name="author" content="Spark Admin Team">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.ico') }}">
-
     <!-- Local Third-Party Libraries (100% Offline Compatible) -->
     <link rel="stylesheet" href="{{ asset('assets/libs/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/libs/bootstrap-icons/bootstrap-icons.css') }}">
@@ -34,10 +31,10 @@
 
           <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin-bottom: 25px;">
                 <!-- Logo Sekolah -->
-                  <img src="{{ asset('assets/images/sakola.png') }}" alt="Logo SMA Cintawana" style="width: 70px; height: 70px; object-fit: contain; margin-bottom: 10px;">
+                  <img src="{{ asset('assets/images/satap.png') }}" alt="logo smpn satu atap 1 mangunreja" style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 10px;">
                  <!-- Teks Nama Sekolah -->
                   <a href="#" class="login-brand text-decoration-none" style="font-weight: 700; font-size: 20px; color: #18392b;">
-                      SMA CINTAWANA
+                      SMPN SATU ATAP 1 MANGUNREJA
                 </a>
         </div>
 
@@ -74,15 +71,13 @@
                         <span>Ingat Saya</span>
                     </label>
                 </div>
-
-                <button type="submit" class="btn-login" id="btn-submit">
-                    <span>Masuk</span>
-                    <i class="bi bi-arrow-right"></i>
-                </button>
+            <button type="submit" class="btn-login" id="btn-submit" style="background-color: #6c757d; border-color: #6c757d; color: white;">
+               <span>Masuk</span>
+                <i class="bi bi-arrow-right"></i>
+            </button>
             </form>
         </div>
     </div>
-
     <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/auth.js') }}"></script>
 </body>
