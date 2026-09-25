@@ -18,7 +18,7 @@
                                 Kelola seluruh data informasi SMPN Satu Atap 1 Mangunreja mulai dari profil, guru, siswa, berita, ekstrakurikuler, hingga galeri sekolah dengan mudah dan terpusat di sini.
                             </p>
                         </div>
-                       <div class="col-lg-4 text-end d-none d-lg-block ms-auto">
+                        <div class="col-lg-4 text-end d-none d-lg-block ms-auto">
                     <div class="p-3 bg-white bg-opacity-10 rounded-circle d-inline-block shadow-inner">
                        <img src="{{ asset('assets/images/satap.png') }}" alt="Logo Sekolah" style="max-height: 110px; object-fit: contain; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));">
                          </div>
@@ -52,13 +52,13 @@
             </div>
         </div>
 
-        <!-- Kelola Siswa -->
+        <!-- Kelola Siswa (Dinamis dari Database) -->
         <div class="col-xl-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 hover-shadow transition-all" style="border-radius: 14px; border-left: 5px solid #495057 !important;">
                 <div class="card-body p-4 d-flex align-items-center justify-content-between">
                     <div>
                         <span class="text-muted d-block small fw-bold text-uppercase mb-1" style="letter-spacing: 0.5px;">Kelola Siswa</span>
-                        <h3 class="fw-bold text-dark mb-0">150</h3>
+                        <h3 class="fw-bold text-dark mb-0">{{ $totalSiswa ?? 0 }}</h3>
                         <span class="text-success small fw-semibold"><i class="bi bi-arrow-up-right"></i> Data Aktif</span>
                     </div>
                     <div class="p-3 rounded-4 text-secondary bg-light" style="background-color: rgba(73, 80, 87, 0.1) !important;">

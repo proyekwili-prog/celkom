@@ -24,6 +24,12 @@ Route::post('/login', [AuthController::class, 'processLogin'])->name('admin.logi
 Route::get('/admin/siswa', [KelolaSiswaController::class, 'index'])->name('admin.siswa');
 Route::post('/admin/siswa', [KelolaSiswaController::class, 'store'])->name('admin.siswa.store');
 
+// Pastikan rute-rute ini ada di dalam file web.php Anda
+Route::get('/admin/guru', [KelolaGuruController::class, 'index'])->name('admin.guru.index');
+Route::post('/admin/guru', [KelolaGuruController::class, 'store'])->name('admin.guru.store');
+Route::put('/admin/guru/{id}', [KelolaGuruController::class, 'update'])->name('admin.guru.update');
+Route::delete('/admin/guru/{id}', [KelolaGuruController::class, 'destroy'])->name('admin.guru.destroy');
+
 Route::prefix('admin')->group(function () {
     Route::get(uri: '/dashboard', action:[DashboardController::class,'index'])->name('admin.dashboard');
 
@@ -35,6 +41,6 @@ Route::prefix('admin')->group(function () {
     Route::get( '/berita', action:[KelolaBeritaController::class,'index'])->name('admin.berita');
     Route::get( '/siswa', action:[KelolaSiswaController::class,'index'])->name('admin.siswa');
     Route::get( '/galeri', action:[KelolaGaleriController::class,'index'])->name('admin.galeri');
-    Route::get( '/guru', action:[KelolaGuruController::class,'index'])->name('admin.guru');
+    // Route::get( '/guru', action:[KelolaGuruController::class,'index'])->name('admin.guru');
     Route::get( '/ekstrakulikuler', action:[KelolaEkstraKuliKulerController::class,'index'])->name('admin.ekstrakulikuler');
 });

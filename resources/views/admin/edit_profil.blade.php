@@ -8,6 +8,17 @@
     <h2 style="color: black; margin-bottom: 5px;">Edit Profil Sekolah</h2>
     <p style="color: #777; margin-bottom: 25px;">Silakan ubah informasi sekolah di bawah ini.</p>
 
+    <!-- Menampilkan pesan error jika ada validasi yang gagal -->
+    @if ($errors->any())
+        <div style="background: #f8d7da; color: #842029; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #f5c2c7;">
+            <ul style="margin: 0; padding-left: 20px;">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <!-- max-width diubah menjadi 100% agar melebar full -->
     <div style="background: white; padding: 30px; border-radius: 15px; width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
 
@@ -55,12 +66,11 @@
                 <textarea name="visi" style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px;" rows="3" placeholder="Masukkan visi sekolah...">{{ old('visi', $profile->visi ?? '') }}</textarea>
             </div>
 
-            <!-- Tambahan Misi -->
-            <!-- Bagian Misi di edit_profil.blade.php -->
-<div style="margin-bottom: 20px;">
-    <label style="font-weight: 600; color: #333;">Misi</label>
-    <textarea name="misi" style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px;" rows="5" placeholder="Masukkan misi sekolah...">{{ old('misi', $profile->misi ?? '') }}</textarea>
-</div>
+            <!-- Bagian Misi -->
+            <div style="margin-bottom: 20px;">
+                <label style="font-weight: 600; color: #333;">Misi</label>
+                <textarea name="misi" style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px;" rows="5" placeholder="Masukkan misi sekolah...">{{ old('misi', $profile->misi ?? '') }}</textarea>
+            </div>
 
             <button type="submit" style="background: #6c757d; color: white; border: none; padding: 10px 22px; border-radius: 7px; cursor: pointer; font-weight: 600;">Simpan</button>
             <a href="{{ route('admin.profile') }}" style="margin-left: 10px; text-decoration: none; color: #555;">Batal</a>

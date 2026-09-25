@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li class="sidebar-menu-item">
-                         <a href="{{ route('admin.guru') }}" class="sidebar-menu-link text-white">
+                         <a href="{{ route('admin.guru.index') }}" class="sidebar-menu-link text-white">
                             <i class="bi bi-person-badge fs-9"></i>
                             <span>Kelola Guru</span>
                         </a>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KelolaSiswa; // 1. Tambahkan baris ini untuk memanggil Model KelolaSiswa
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -11,7 +12,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        // 2. Hitung jumlah total data siswa dari database
+        $totalSiswa = KelolaSiswa::count();
+
+        // 3. Masukkan ke dalam array data untuk dikirim ke view
+        $data = [
+            'title' => 'Dashboard',
+            'totalSiswa' => $totalSiswa,
+        ];
+
+        return view('admin.dashboard', $data);
     }
 
     public function indexPublic()
