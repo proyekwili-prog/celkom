@@ -3,5 +3,5 @@
 @section('title', $title)
 
 @section('content')
-<p>Ini Halaman Berita</p>
+<p>Ini Halaman Ekstrakulikuler</p>
 @endsection

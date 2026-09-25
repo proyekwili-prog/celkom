@@ -12,7 +12,11 @@ class KelolaEkstrakuliKulerController extends Controller
      */
     public function index()
     {
-        //
+       $data = [
+            'title' => 'Ekstrakulikuler'
+        ];
+
+        return view ('admin.ekstrakulikuler', $data);
     }
 
     /**

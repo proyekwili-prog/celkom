@@ -1,4 +1,4 @@
-@extends('admin')
+@extends('public.admin')
 
 @section('title', 'Edit Profil Sekolah')
 

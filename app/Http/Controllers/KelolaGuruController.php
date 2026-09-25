@@ -12,8 +12,13 @@ class KelolaGuruController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'title' => 'Guru'
+        ];
+
+        return view ('admin.guru', $data);
     }
+    
 
     /**
      * Show the form for creating a new resource.

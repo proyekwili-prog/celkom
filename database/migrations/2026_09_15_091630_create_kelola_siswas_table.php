@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('kelola_siswas', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('nisn');
+            $table->string('kelas');
             $table->timestamps();
         });
     }

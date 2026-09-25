@@ -39,11 +39,11 @@ class AuthController extends Controller
         );
 
         if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            return redirect()->intented(route('admin.dashboard'))->with('succes', 'Selamat datang kembali,' .Auth::user()->name. '!');
-        }
-
+    $request->session()->regenerate();
+    
+    // Alihkan langsung ke dashboard admin
+    return redirect()->route('admin.dashboard');
+}
         return back()->withErrors(
             [
                 'email' => 'Kombinasi alamat email atau kata sandi tidak sesuai.',
@@ -52,14 +52,15 @@ class AuthController extends Controller
 
     }
 
-     public function logout(Request $request)
-    {
-        Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect()->route('public.dashboard')->with('success', 'Anda telalh berhasil keluar dari sistem');
+    public function logout(Request $request)
+{
+    Auth::logout();
 
-    }
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect()->route('admin.login');
+}
 
 
 

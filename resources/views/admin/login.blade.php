@@ -32,14 +32,22 @@
           <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin-bottom: 25px;">
                 <!-- Logo Sekolah -->
                   <img src="{{ asset('assets/images/satap.png') }}" alt="logo smpn satu atap 1 mangunreja" style="width: 100px; height: 100px; object-fit: contain; margin-bottom: 10px;">
-                 <!-- Teks Nama Sekolah -->
-                  <a href="#" class="login-brand text-decoration-none" style="font-weight: 700; font-size: 20px; color: #18392b;">
-                      SMPN SATU ATAP 1 MANGUNREJA
-                </a>
+                   <!-- Teks Nama Sekolah -->
+                    <a href="#" class="login-brand text-decoration-none" style="font-weight: 700; font-size: 20px; color: #18392b;">
+                        SMPN SATU ATAP 1 MANGUNREJA
+                    </a>
         </div>
 
-            <!-- Login Form (Diubah ke POST dan mengarah ke route login Laravel) -->
-            <form action="{{ route('admin.login') }}" method="POST" id="loginForm" class="needs-validation" novalidate>
+            <!-- Alert Error Jika Login Gagal -->
+            @if ($errors->any())
+                <div class="alert alert-danger" style="margin-bottom: 20px; padding: 12px; border-radius: 8px; background: #f8d7da; color: #721c24; font-size: 14px; text-align: left;">
+                    @foreach ($errors->all() as $error)
+                        <div>{{ $error }}</div>
+                    @endforeach
+                </div>
+            @endif
+
+            <form action="{{ route('admin.login.submit') }}" method="POST">
                 @csrf
 
                 <!-- Email Input Group -->
@@ -47,8 +55,8 @@
                     <label for="email" class="login-form-label">Email</label>
                     <div class="login-input-group">
                         <i class="bi bi-envelope input-icon"></i>
-                        <!-- Ditambahkan name="email" dan value untuk mempertahankan input jika gagal -->
-                        <input type="email" id="email" name="email" value="{{ old('email') }}" class="login-input" placeholder="" required>
+                        <!-- Ditambahkan autocomplete="off" untuk mencegah autofill browser -->
+                        <input type="email" id="email" name="email" value="{{ old('email') }}" class="login-input" placeholder="" required autocomplete="off">
                     </div>
                 </div>
 
@@ -57,8 +65,8 @@
                     <label for="password" class="login-form-label">Kata Sandi</label>
                     <div class="login-input-group">
                         <i class="bi bi-shield-lock input-icon"></i>
-                        <!-- Ditambahkan name="password" -->
-                        <input type="password" id="password" name="password" class="login-input login-input-password" placeholder="" required>
+                        <!-- Ditambahkan autocomplete="new-password" untuk mencegah autofill password -->
+                        <input type="password" id="password" name="password" class="login-input login-input-password" placeholder="" required autocomplete="new-password">
                         <button type="button" class="password-toggle-btn" id="toggle-password" aria-label="Show password">
                             <i class="bi bi-eye"></i>
                         </button>
@@ -71,10 +79,11 @@
                         <span>Ingat Saya</span>
                     </label>
                 </div>
-            <button type="submit" class="btn-login" id="btn-submit" style="background-color: #6c757d; border-color: #6c757d; color: white;">
-               <span>Masuk</span>
-                <i class="bi bi-arrow-right"></i>
-            </button>
+
+                <button type="submit" class="btn-login" id="btn-submit" style="background-color: #6c757d; border-color: #6c757d; color: white;">
+                   <span>Masuk</span>
+                    <i class="bi bi-arrow-right"></i>
+                </button>
             </form>
         </div>
     </div>

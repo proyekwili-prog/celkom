@@ -50,31 +50,31 @@
                     </li>
                     <li class="sidebar-menu-item">
                          <a href="{{ route('admin.guru') }}" class="sidebar-menu-link text-white">
-                            <i class="bi bi-person-workspace"></i>
+                            <i class="bi bi-person-badge fs-9"></i>
                             <span>Kelola Guru</span>
                         </a>
                     </li>
                     <li class="sidebar-menu-item">
                          <a href="{{ route('admin.siswa') }}" class="sidebar-menu-link text-white">
-                            <i class="bi bi-people-fill"></i>
+                           <i class="bi bi-people fs-9"></i>
                             <span>Kelola Siswa</span>
                         </a>
                     </li>
                     <li class="sidebar-menu-item">
                         <a href="{{ route('admin.berita') }}" class="sidebar-menu-link text-white">
-                            <i class="bi bi-grid-fill"></i>
+                           <i class="bi bi-journal-text fs-9"></i>
                             <span>Kelola Berita</span>
                         </a>
                     </li>
                     <li class="sidebar-menu-item">
                          <a href="{{ route('admin.ekstrakulikuler') }}" class="sidebar-menu-link text-white">
-                            <i class="bi bi-collection-fill"></i>
+                           <i class="bi bi-trophy fs-9"></i>
                             <span>Kelola Ekstrakulikuler</span>
                         </a>
                     </li>
                     <li class="sidebar-menu-item">
                          <a href="{{ route('admin.galeri') }}" class="sidebar-menu-link text-white">
-                            <i class="bi bi-image"></i>
+                          <i class="bi bi-images fs-9"></i>
                             <span>Kelola Galeri</span>
                         </a>
                     </li>
@@ -115,11 +115,12 @@
                         <span class="navbar-profile-name d-none d-md-inline fw-medium text-dark">Administrator</span>
                         <i class="bi bi-chevron-down navbar-profile-caret small text-muted"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0" aria-labelledby="profile-dropdown">
+                    <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="profile-dropdown">
                         <li>
-                            <a class="dropdown-item text-danger d-flex align-items-center gap-2 py-2" href="page-login.html">
-                                <i class="bi bi-box-arrow-right"></i> Logout
-                            </a>
+                            <form action="{{ route('admin.logout') }}" method="POST" class="m-0">
+                                @csrf
+                                <button type="submit" class="dropdown-item text-danger">Keluar</button>
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -137,7 +138,7 @@
 
     <!-- Local Third-Party Libraries Script dependencies -->
     <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+    <script src="{{asset('assets/libs/apexcharts/apexcharts.min.js')}}`](asset('assets/libs/flatpickr/flatpickr.min.js'))}}"></script>
     <script src="{{asset('assets/libs/flatpickr/flatpickr.min.js')}}"></script>
 
     <!-- Local dashboard interactions controller -->

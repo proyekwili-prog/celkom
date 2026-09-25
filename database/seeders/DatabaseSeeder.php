@@ -19,15 +19,15 @@ class DatabaseSeeder extends Seeder
         User::create([
 
             'name' => 'Administrator',
-            'email' => 'admin@sekolah.sch.id',
-            'password' =>Hash::make('passsword'),
+            'email' => 'satap@gmail.com',
+            'password' =>Hash::make('123456'),
             'role' => 'admin'
         ]);
 
         User::create([
 
             'name' => 'operator sekolah',
-            'email' => 'operator@sekolah.sch.id',
+            'email' => 'operator@gmail.com',
             'password' =>Hash::make('passsword'),
             'role' => 'operator'
         ]);

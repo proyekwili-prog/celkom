@@ -12,7 +12,11 @@ class KelolaGaleriController extends Controller
      */
     public function index()
     {
-        //
+         $data = [
+            'title' => 'Galeri'
+        ];
+
+        return view ('admin.galeri', $data);
     }
 
     /**
